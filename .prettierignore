@@ -1,0 +1,8 @@
+node_modules
+.husky
+coverage
+.env
+*.log
+*.md
+*.yml
+.nyc_output

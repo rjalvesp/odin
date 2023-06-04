@@ -1,0 +1,7 @@
+{
+  "ignore": [".husky", ".git", "node_modules", "dist", "coverage"],
+  "watch": ["./src"],
+  "exec": "npm start",
+  "ext": "ts",
+  "delay": "500"
+}

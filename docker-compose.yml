@@ -1,0 +1,47 @@
+version: '3.8'
+services:
+  lapa_db:
+    image: postgres:14.1-alpine
+    restart: always
+    environment:
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=lapaserver
+    ports:
+      - '5432:5432'
+    volumes: 
+      - ./db:/var/lib/postgresql/data
+# version: "3"
+# services:
+#   lapa_nosql:
+#     image: couchdb
+#     restart: always
+#     ports:
+#       - "5984:${COUCHDB_PORT}"
+#     environment:
+#       - COUCHDB_USER=${COUCHDB_USER}
+#       - COUCHDB_PASSWORD=${COUCHDB_PASSWORD}
+#     volumes:
+#       - ./dbdata:/opt/couchdb/data
+#   initializer:
+#     image: curlimages/curl
+#     deploy:
+#       restart_policy:
+#         condition: on-failure
+#     depends_on:
+#       - lapa_nosql
+#     command:
+#       [
+#         "sh",
+#         "-c",
+#         "sleep 15 && curl -u ${COUCHDB_USER}:${COUCHDB_PASSWORD} -X PUT
+#         lapa_nosql:${COUCHDB_PORT}/_users && curl -u
+#         ${COUCHDB_USER}:${COUCHDB_PASSWORD} -X PUT
+#         lapa_nosql:${COUCHDB_PORT}/${COUCHDB_NAME} && curl -u
+#         ${COUCHDB_USER}:${COUCHDB_PASSWORD} -X PUT
+#         lapa_nosql:${COUCHDB_PORT}/migrations && curl -u
+#         ${COUCHDB_USER}:${COUCHDB_PASSWORD} -X PUT
+#         lapa_nosql:${COUCHDB_PORT}/seeds && curl -u
+#         ${COUCHDB_USER}:${COUCHDB_PASSWORD} -X PUT
+#         lapa_nosql:${COUCHDB_PORT}/tests",
+#       ]
