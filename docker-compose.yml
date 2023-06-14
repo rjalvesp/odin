@@ -6,7 +6,7 @@ services:
     environment:
       - POSTGRES_USER=user
       - POSTGRES_PASSWORD=password
-      - POSTGRES_DB=lapaserver
+      - POSTGRES_DB=odin-1
     ports:
       - '5432:5432'
     volumes: 

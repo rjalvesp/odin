@@ -11,7 +11,7 @@ dotenv.config({
 const {
   NODE_ENV,
   NODE_PORT,
-  CORE_DB_CONNECTION,
+  CORE_DB_CONNECTION_STRING,
   GOOGLE_API_KEY,
   GOOGLE_PRODUCT_KEY,
 } = R.propOr({}, "env", process);
@@ -23,7 +23,7 @@ const env = {
 
 const server = { port: parseInt(NODE_PORT, 10) };
 
-const db = { mainConnectionString: CORE_DB_CONNECTION };
+const db = { mainConnectionString: CORE_DB_CONNECTION_STRING };
 
 const config = {
   db,

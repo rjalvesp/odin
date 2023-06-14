@@ -2,7 +2,7 @@ import R from "ramda";
 import http from "http";
 import config from "config";
 
-import { ConfigServer } from "@definitions/config";
+import { ConfigServer } from "@definitions/interfaces/config";
 import logger from "@services/logger";
 import app from "@/index";
 

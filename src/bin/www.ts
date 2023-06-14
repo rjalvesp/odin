@@ -4,7 +4,7 @@ import config from "config";
 
 import logger from "@services/logger";
 import server from "./server";
-import { ConfigEnv } from "@definitions/config";
+import { ConfigEnv } from "@definitions/interfaces/config";
 
 const numCPUs = cpus().length;
 
